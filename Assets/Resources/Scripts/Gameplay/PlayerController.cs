@@ -38,11 +38,11 @@ public class PlayerController : MonoBehaviour
         head.transform.localEulerAngles -= Vector3.right * lookValue.y * headSensibility * Time.deltaTime; 
         transform.localEulerAngles += Vector3.up * lookValue.x * headSensibility * Time.deltaTime;
 
-        head.transform.localEulerAngles = new(
-            Mathf.Clamp(head.transform.localEulerAngles.x, -90f, 90f),
-            head.transform.localEulerAngles.y,
-            head.transform.localEulerAngles.z
-        );
+        //head.transform.localEulerAngles = new(
+        //    Mathf.Clamp(head.transform.localEulerAngles.x, -90f, 90f),
+        //    head.transform.localEulerAngles.y,
+        //    head.transform.localEulerAngles.z
+        //);
 
     }
 
