@@ -33,6 +33,10 @@ namespace COL1.Utilities {
         {
             return new(a.z, a.w);
         }
+        public static Vector3 XZ3D(Vector2 a)
+        {
+            return new(a.x, 0, a.y);
+        }
 
         public static Vector2 RestrictIn(Vector2 p, Vector4 b)
         {
