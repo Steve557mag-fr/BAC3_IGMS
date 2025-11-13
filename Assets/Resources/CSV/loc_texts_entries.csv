@@ -1,0 +1,101 @@
+﻿ID;TYPE;ARG;NAME;SPEED;frFR;enGB
+1;FRAG;2;SARAH;NORMAL;Hmm.. Jsuis tellement fatiguée;Ah.. I'm so tired.
+2;FRAG;3;SARAH;NORMAL;*S'étire*;*Stretch*
+3;FRAG;4;SARAH;NORMAL;Je vais me rincer le visage, ça devrait me réveiller;I'll put some water on my face, that should wake me up.
+4;FRAG;5;SARAH;NORMAL;*Se regarde dans le miroir*;*Checks mirror*
+5;FRAG;6;SARAH;NORMAL;Ah.. J'ai tellement faim, je devrais aller chercher quelque chose à manger.;Ugh I'm so hungry, I should go get something to eat.
+6;FRAG;7;SARAH;NORMAL;Faudrait peut-être que je m'habille avant de sortir.;I should probably throw something on before leaving though.
+7;FRAG;8;SARAH;NORMAL;*Enfile des vêtements et se regarde à nouveau dans le miroir.;*Change Clothes & Look back at mirror*
+8;FRAG;9;SARAH;NORMAL;"Ok, tout est bon, c'est parti. <link=""SKIP"">";"Ah all set let's go. <link=""SKIP"">"
+9;FRAG;10;TREJA;SLOW;Pff... Je veux pas y aller..;Ugh...I don't wanna go...
+10;FRAG;11;SARAH;NORMAL;Hein ?;Hmm?
+11;FRAG;12;TREJA;SLOW;C'est trop loin, ça n'en vaut pas la peine...;But it's just so far, it's no worth it...
+12;FRAG;13;SARAH;NORMAL;Mais j'ai besoin de manger..;But I need to eat...
+13;FRAG;14;TREJA;SLOW;Vraiment ?;Do you?
+14;FRAG;15;SARAH;NORMAL;Ouais, il faudrait vraiment que... Attends un peu..;Yeah, I'd better... Wait...
+15;FRAG;16;SARAH;NORMAL;Qui es-tu ?;Who are you?
+16;FRAG;17;TREJA;SLOW;Je m'appelle Treja.;My name is Treja
+17;FRAG;18;SARAH;NORMAL;Et, pourquoi es-tu là? Tu es.. moi..?;And, why are you here? Are you me?
+18;FRAG;19;TREJA;SLOW;Non, pas vraiment.;No, Not really.
+19;FRAG;20;TREJA;SLOW;Mais je ne veux juste pas sortir... Je veux juste rester ici et lire un livre..;But I don't wanna go out, I'd rather stay in and read a book..
+20;FRAG;21;SARAH;NORMAL;Mais on DOIT manger, c'est un besoin vital !;But we NEED to eat, it's like a basic necessity!
+21;FRAG;22;TREJA;SLOW;Pff.. Naah;Ughh nah...
+22;FRAG;23;SARAH;NORMAL;T'en fais pas, tu pourras lire ce que tu veux quand on reviendra !;It's ok, you'll be able to read whatever you want once we get back
+23;FRAG;24;TREJA;NORMAL;"Ah ouais ? Même ""Bruges-la-Morte"" ??";"Oh, like ""1984""??"
+24;FRAG;25;SARAH;NORMAL;Euh.. ouais, bien sur.;Uuh yeah, sure.
+25;FRAG;26;TREJA;NORMAL;Okay, ça marche ! Marché conclu !;Ok fine, it's a deal! 
+26;FRAG;27;SARAH;NORMAL;Ouaip, marché conclu.;Yep it's a deal.
+27;NONE;28;RICHARD;NORMAL;Wesh Sarah ! Tu dates !;Hey Sarah! Long time no see!
+28;NONE;29;RICHARD;NORMAL;"Oh.. Salut Richard. <link=""SKIP"">";"Oh... Hey... Richard. <link=""SKIP"">"
+29;NONE;30;PRIXY;FAST;Je suis un peu pressée.. on pourrait pas parler plus tard..?;I'm a bit in a hurry.. could we talk later?
+30;NONE;31;RICHARD;NORMAL;Hein ? Pourquoi ? Ca fait si longtemps qu'on a pas parler.;Huh, why? It's been so long, we haven't caught up for ever!
+31;NONE;32;RICHARD;NORMAL;T'es toujours malade ? Genre ta schizophrénie ou autre là ?;You're still ill by the way? You know, your schizophrenia or whatever...
+32;NONE;33;PRIXY;FAST;"Je.. Non c'est pas.. <link=""SKIP"">";"I... No it's... <link=""SKIP"">"
+33;NONE;34;SARAH;NORMAL;C'est un Trouble Dissociatif de l'Identité. Renseigne toi la prochaine fois que tu veux me parler.;It's Dissociative Identity Disorder. Get it right next time if you wanna catch up.
+34;NONE;35;SARAH;NORMAL;Oh, c'est donc toi qui essayais de lui parler ? ;Oh...so you were the one trying to talk?
+35;NONE;36;SARAH;NORMAL;Et donc, qui es-tu ? ;And you are?
+36;NONE;37;PRIXY;FAST;Je.. Je m'appelle Prixy..;I'm...I'm Prixy...
+37;NONE;38;PRIXY;FAST;Je suis désolé, je suis super bizarre, je foire toujours tout..;I'm sorry I'm awkward, I messed everything up..
+38;NONE;39;SARAH;NORMAL;C'est pas grave, tu n'as pas besoin de te forcer de parler à des gens, on s'en sortira ne t'en fais pas.;It's okay, you don't have to force yourself to talk, we'll go through this together.
+39;NONE;40;PRIXY;FAST;Je ne serais jamais capable de parler aux autres comme tu viens de le faire..;I'll never be able to talk to others like you did.
+40;NONE;41;SARAH;NORMAL;Bah, techniquement c'est un peu inévitable, sinon tu ne tisseras aucun lien avec des gens.;Well, it's quite inevitable. Otherwise you'll never connect with anyone.
+41;NONE;42;SARAH;NORMAL;Mais ne t'en fais pas, la plupart des gens ne sont pas comme Richard, il y'a des gens plus sympa, donc tout ira bien!;And don't worry, most people aren't like Richard, there are way kinder people out there, it'll be okay!
+42;NONE;43;PRIXY;SLOW;Si.. Si tu le dis. Merci..;If... If you say so. Thank you.
+43;NONE;44;SARAH;NORMAL;Oh.. C'est les céréales que maman me prenait a l'époque... hmm..;Oh, the cereals mom used to buy... hm
+44;NONE;45;YOUNG SARAH;NORMAL;Mamaaaan ! J'ai super faiim, j'peux avoir mes céréaaales??;Mamaaa! I'm hungryyyy, can I get cereaaaaals?
+45;NONE;46;SARAH'S MOM;NORMAL;Bien sur louloute, jvais t'en faire un bol;Sure honey, I'll make you a bowl.
+46;NONE;47;YOUNG SARAH;NORMAL;Merci maman !;Thanks mom!
+47;NONE;48;YOUNG SARAH;FAST;*Miam* *Miam*;*Crunch* *Crunch*
+48;NONE;49;SARAH;NORMAL;*La mère de Sarah quitte la pièce, au dela de la port résonne les échos d'une discussion entre les parents de Sarah.*;*Sarah's mom leaves the room, there's an echo of a discussion between her and Sarah's father through the door*
+49;NONE;50;SARAH'S DAD;NORMAL;Tu lui as encore acheté ceux-là ? Tu te rends comptes à quel point ils sont cher ??;You bought these again ? Do you know how expensive they are ??
+50;NONE;51;SARAH'S MOM;NORMAL;Oui je sais.. Mais c'est ses préférés.. Laisse là profiter pour une fois.;Yes, I know.. but they're her favourite. Let her have her fun for once.
+51;NONE;52;SARAH'S DAD;NORMAL;Je suis l'homme de la maison.;I'm the man of the house.
+52;NONE;53;SARAH'S DAD;NORMAL;C'est moi qui apporte l'argent.;I bring the money.
+53;NONE;54;SARAH'S DAD;NORMAL;C'est donc moi qui décide.;I decide.
+54;NONE;55;SARAH'S DAD;NORMAL;Arrête de jeter l'argent par les fenêtre. Espèce de déchet parasite.;Stop throwing away my money down the drain. You useless waste.
+55;NONE;56;SARAH'S MOM;SLOW;Je suis désolé.. Je.. Je ne le referais plus...;I'm sorry.. I.. I won't do it again...
+56;NONE;57;SARAH'S DAD;NORMAL;*La gifle*;*Slaps her*
+57;NONE;58;SARAH'S DAD;FAST;J'EN VEUX PAS DE TES EXCUSES, JE VEUX RÉCUPÉRER MON ARGENT;I DON'T WANT EXCUSES. I WANT MY WASTED MONEY BACK.
+58;NONE;59;LILLY;SLOW;Maman me manque..;I miss mama...
+59;NONE;60;LILLY;SLOW;C'était vraiment la meilleure...;She was the best
+60;NONE;61;LILLY;SLOW;Papa, lui, c'était vraiment le pire.. Je suis content qu'il ne soit plus dans ma vie.;Dad was the worst though. I'm glad I don't see him anymore.
+61;NONE;62;LILLY;NORMAL;Hmm...;Hmm...
+62;NONE;63;LILLY;FAST;J'ai quand même envie de prendre ces céréales. *prends les céréales*;I still want those cereals now *takes the cereals*
+63;NONE;64;SARAH;SLOW;Maman... *Regarde dans la fenêtre du frigo avant de prendre le lait*;Mom... *looking into the fridge's window to take some milk*
+64;NONE;65;LILLY;FAST;Moi c'est Lilly d'ailleurs !;I'm Lily by the way!
+65;NONE;66;SARAH;SLOW;Ouais... Ok.. Désolé, je suis un peu boulversée pour le moment..;Yeah...hey. Sorry, I'm a bit out of it right now.
+66;NONE;67;LILLY;NORMAL;Oh ? Tu as l'air triste.. Tu sais ce qui pourrait te redonner le sourir ? Des pommes ! C'est délicieux les pommes !;Hmm? You look sad. You know what'll cheer you up? Apples! They're yummy!
+67;NONE;68;SARAH;SLOW;Je suppose que tu as raison. Je vais en prendre.;I guess you're right. I'll take some.
+68;NONE;69;CASHIER;NORMAL;Bonjour ! ;Hello!
+69;NONE;70;SARAH;SLOW;Bonjour..;Hi..
+70;NONE;71;CASHIER;NORMAL;Ca vous fera 10.53€ ;That'll be 10.53€
+71;NONE;72;SARAH;NORMAL;...;...
+72;NONE;73;CASHIER;NORMAL;Madame?;Miss ?
+73;NONE;74;LILLY;FAST;Oui ! Tenez, merci !!;Yes! Here you go! Thank you!!
+74;NONE;75;CASHIER;NORMAL;Bon après-midi ! ;Have a good evening.
+75;NONE;76;SARAH;NORMAL;Également.;Likewise.
+76;NONE;77;NONE;NORMAL;;
+77;NONE;78;NONE;NORMAL;;
+78;NONE;;NONE;NORMAL;;
+79;NONE;;NONE;NORMAL;;
+80;NONE;;NONE;NORMAL;;
+81;NONE;;NONE;NORMAL;;
+82;NONE;;NONE;NORMAL;;
+83;NONE;;NONE;NORMAL;;
+84;NONE;;NONE;NORMAL;;
+85;NONE;;NONE;NORMAL;;
+86;NONE;;NONE;NORMAL;;
+87;NONE;;NONE;NORMAL;;
+88;NONE;;NONE;NORMAL;;
+89;NONE;;NONE;NORMAL;;
+90;NONE;;NONE;NORMAL;;
+91;NONE;;NONE;NORMAL;;
+92;NONE;;NONE;NORMAL;;
+93;NONE;;NONE;NORMAL;;
+94;NONE;;NONE;NORMAL;;
+95;NONE;;NONE;NORMAL;;
+96;NONE;;NONE;NORMAL;;
+97;NONE;;NONE;NORMAL;;
+98;NONE;;NONE;NORMAL;;
+99;NONE;;NONE;NORMAL;;
+100;NONE;;NONE;NORMAL;;
