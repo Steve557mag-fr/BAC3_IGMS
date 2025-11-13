@@ -12,19 +12,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float headSensibility;
     [SerializeField] float interactDistance = 10;
 
-
+    Vector2 headRotation;
     Vector2 moveValue;
     bool isLocked = true;
 
-    public void OnInteract(InputValue val)
+    public void OnInteract()
     {
-
-        if(Physics.Raycast(head.transform.position, head.transform.forward, out RaycastHit hit, interactDistance))
-        {
-            BaseInteraction interaction = hit.transform.GetComponent<BaseInteraction>();
-            if (interaction) interaction.Interact();
-        }
+        if (!Physics.Raycast(head.transform.position, head.transform.forward, out RaycastHit hit, interactDistance)) return;
         
+        BaseInteraction interaction = hit.transform.GetComponent<BaseInteraction>();
+        if (interaction != null) interaction.Interact();
     }
 
     public void OnMove(InputValue val)
@@ -35,15 +32,12 @@ public class PlayerController : MonoBehaviour
     public void OnLook(InputValue val)
     {
         var lookValue = val.Get<Vector2>();
-        head.transform.localEulerAngles -= Vector3.right * lookValue.y * headSensibility * Time.deltaTime; 
-        transform.localEulerAngles += Vector3.up * lookValue.x * headSensibility * Time.deltaTime;
 
-        //head.transform.localEulerAngles = new(
-        //    Mathf.Clamp(head.transform.localEulerAngles.x, -90f, 90f),
-        //    head.transform.localEulerAngles.y,
-        //    head.transform.localEulerAngles.z
-        //);
-
+        headRotation.x -= lookValue.y * headSensibility * Time.deltaTime;
+        headRotation.y += lookValue.x * headSensibility * Time.deltaTime;
+        headRotation.x = Mathf.Clamp(headRotation.x, -80, 80);
+        head.transform.localRotation = Quaternion.Euler(Vector3.right * headRotation.x);
+        transform.localRotation = Quaternion.Euler(Vector3.up * headRotation.y);
     }
 
 
@@ -53,8 +47,8 @@ public class PlayerController : MonoBehaviour
             (transform.forward * moveValue.y + transform.right * moveValue.x).normalized * walkSpeed * Time.deltaTime
         );
         controller.Move(Physics.gravity);
-
-        if (Keyboard.current[Key.O].wasPressedThisFrame) isLocked = !isLocked;
+         
+        if (Keyboard.current[Key.Tab].wasPressedThisFrame) isLocked = !isLocked;
         Cursor.lockState = isLocked ? CursorLockMode.Locked : CursorLockMode.None;
 
         if (Physics.Raycast(head.transform.position, head.transform.forward, out RaycastHit hit, interactDistance))

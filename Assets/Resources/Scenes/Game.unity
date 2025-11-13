@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 1622943834}
   - component: {fileID: 1622943833}
   m_Layer: 0
-  m_Name: Teleport
+  m_Name: test (01)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 1970541647}
   - component: {fileID: 1970541651}
   m_Layer: 0
-  m_Name: Dialog
+  m_Name: test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,7 +741,7 @@ MonoBehaviour:
   onInteract:
     m_PersistentCalls:
       m_Calls: []
-  dialogID: 16
+  dialogID: 1
 --- !u!1001 &868463436803959037
 PrefabInstance:
   m_ObjectHideFlags: 0
