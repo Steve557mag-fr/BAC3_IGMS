@@ -9,7 +9,7 @@ public class Dialog : MonoBehaviour
 
     const string PATH_DB = "CSV/loc_texts_entries";
     bool isBusy = false;
-    int currentIndex = 0;
+    int currentIndex = -1;
     CSVDocument db;
 
     private void Awake()
@@ -45,17 +45,24 @@ public class Dialog : MonoBehaviour
 
     public void Next(bool bypass=false)
     {
-        Debug.Log($"{isBusy}");
-        if (bypass || isBusy) return;
+        if (bypass || isBusy || currentIndex == -1) return;
+        //Debug.Log($"{isBusy}");
+        //Debug.Log("so goood");
+        //Debug.Log($"{currentIndex}");
 
-        Debug.Log("so goood");
-        Debug.Log($"{currentIndex}");
         Debug.Log(db.GetRawData("ARG", currentIndex));
         string[] args = db.GetRawData("ARG", currentIndex).Split(",");
-        if (args.Length == 0) ui.CloseSeq();
+        if (args.Length == 0) Close();
 
         NewFragment(int.Parse(args[0]));
 
+    }
+
+    public void Close()
+    {
+        currentIndex = -1;
+        ui.CloseSeq();
+        isBusy = false;
     }
 
 
