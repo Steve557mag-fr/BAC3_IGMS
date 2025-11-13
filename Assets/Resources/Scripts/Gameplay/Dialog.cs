@@ -16,12 +16,13 @@ public class Dialog : MonoBehaviour
     {
         db = new(PATH_DB);
         db.FilterDoc("TYPE", (string s) => { return s == "FRAG"; } );
+        isBusy = false;
     }
 
     public void NewFragment(int id)
     {
         if (isBusy) return;
-        isBusy = true;
+        //isBusy = true;
 
         int index = db.FindFromColValue("ID", id.ToString());
         if (index == -1) return;
@@ -31,7 +32,7 @@ public class Dialog : MonoBehaviour
         ui.UploadSeq(fragMessage, 
             onUpdate: (string s) => {
 
-                //if (s.Contains("<skip></")) Next(true); SKIP TRICK : todo with team
+                if (s.Contains("<link=\"SKIP\">")) Next(true);
 
             },
             onFinished: () =>
@@ -44,14 +45,19 @@ public class Dialog : MonoBehaviour
 
     public void Next(bool bypass=false)
     {
-        if (bypass || !isBusy) return;
+        Debug.Log($"{isBusy}");
+        if (bypass || isBusy) return;
 
+        Debug.Log("so goood");
+        Debug.Log($"{currentIndex}");
+        Debug.Log(db.GetRawData("ARG", currentIndex));
         string[] args = db.GetRawData("ARG", currentIndex).Split(",");
         if (args.Length == 0) ui.CloseSeq();
 
         NewFragment(int.Parse(args[0]));
 
     }
+
 
     public static Dialog Get()
     {

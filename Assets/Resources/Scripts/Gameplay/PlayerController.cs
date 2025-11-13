@@ -41,6 +41,15 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    public void OnLeftClick(InputValue val)
+    {
+        print("dzqdqzddq");
+
+        Dialog.Get().Next();
+
+    }
+
+
     public void Update()
     {
         controller.Move(

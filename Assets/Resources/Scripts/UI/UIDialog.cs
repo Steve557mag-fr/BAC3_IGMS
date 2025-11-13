@@ -26,6 +26,7 @@ public class UIDialog : MonoBehaviour
 
         }).setOnComplete(() =>
         {
+            Debug.Log("FINNNN");
             onFinished?.Invoke();
         });
 

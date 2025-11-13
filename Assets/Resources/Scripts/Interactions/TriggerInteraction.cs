@@ -9,6 +9,8 @@ public class TriggerInteraction : BaseInteraction
     private void OnTriggerEnter(Collider other)
     {
         if (once && locked) return;
+        locked = true;
+
         if (!other.gameObject.CompareTag("Player")) return;
         Interact();
 

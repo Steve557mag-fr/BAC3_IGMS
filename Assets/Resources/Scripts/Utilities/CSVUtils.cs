@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 namespace COL1.Utilities
@@ -9,6 +11,13 @@ namespace COL1.Utilities
 
         public CSVRow(string[] strings) => data = strings;
         public string Get(int index) => data[index];
+
+
+        public override string ToString()
+        {
+            return $"(CSV_ROW) data: {data.Length}";
+        }
+
     }
 
     public class CSVDocument
@@ -24,7 +33,7 @@ namespace COL1.Utilities
             if (lines.Length == 0) return;
 
             //generate header
-            header = lines[0].Split(";");
+            header = lines[0].Replace("\n","").Replace("\r", "").Split(";");
 
             //generate rows
             rows = new CSVRow[lines.Length-2];
@@ -43,6 +52,7 @@ namespace COL1.Utilities
         {
             for (int i = 0; i < header.Length; i++)
             {
+                //Debug.Log($"{header[i]} != {col}");
                 if (header[i] != col) continue;
                 return i;
             }
@@ -54,6 +64,7 @@ namespace COL1.Utilities
         {
             int i = FromHeader(col);
             CSVRow row = GetRow(id);
+            Debug.Log($"row : {row} | i: {i} | doc_headers:{string.Join(',', header)}");
             return row.Get(i);
         }
 
