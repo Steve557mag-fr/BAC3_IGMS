@@ -1,9 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
-using NUnit.Framework;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 namespace COL1.Utilities
@@ -32,11 +28,9 @@ namespace COL1.Utilities
 
             //generate rows
             rows = new CSVRow[lines.Length-2];
-            Debug.Log($"c: {lines.Length}");
-            Debug.Log($"c: {rows.Length}");
 
             for (int i = 1; i < lines.Length; i++) {
-                Debug.Log($"index: {i} \t line: {lines[i]}");
+                //Debug.Log($"index: {i} \t line: {lines[i]}");
                 if (lines[i] == "") continue;
                 rows[i-1] = new(lines[i].Split(";"));
             }
@@ -78,11 +72,8 @@ namespace COL1.Utilities
         {
             int i = FromHeader(col);
             List<CSVRow> newRows = new List<CSVRow>();
-            Debug.Log($"c: {rows.Length}");
 
             foreach (CSVRow row in rows) {
-                Debug.Log(row);
-                Debug.Log(comparator(row.Get(i)));
                 if (comparator(row.Get(i))) newRows.Add(row);
             }
             rows = newRows.ToArray();
