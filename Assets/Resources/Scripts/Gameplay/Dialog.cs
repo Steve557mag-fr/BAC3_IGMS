@@ -22,7 +22,7 @@ public class Dialog : MonoBehaviour
     public void NewFragment(int id)
     {
         if (isBusy) return;
-        //isBusy = true;
+        isBusy = true;
 
         int index = db.FindFromColValue("ID", id.ToString());
         if (index == -1) return;
