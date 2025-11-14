@@ -791,7 +791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ca6f165de8686418e87974223adb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportInteraction
-  once: 0
+  once: 1
   onInteract:
     m_PersistentCalls:
       m_Calls:
@@ -1568,7 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534681887e62fc542886e6f735dfb0bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogInteraction
-  once: 0
+  once: 1
   onInteract:
     m_PersistentCalls:
       m_Calls:

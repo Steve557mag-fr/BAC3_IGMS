@@ -30,6 +30,8 @@ public class Game : MonoBehaviour
     public void StartGame()
     {
         //FindAnyObjectByType<SceneSetup>().UpdateStep();
+
+        SetStep();
         gameData = new();
         Goto("House");
     }
@@ -37,6 +39,11 @@ public class Game : MonoBehaviour
     public void SetStep(int step = 0)
     {
         gameData.step = step;
+        foreach (var e in FindObjectsByType<SceneSetup>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            e.UpdateStep();
+        }
+
     }
 
     public void SetLang(string val)
@@ -53,6 +60,9 @@ public class Game : MonoBehaviour
     public void Awake()
     {
         Singleton.Make(this);
+#if UNITY_EDITOR
+        StartGame();
+#endif
     }
 
 }

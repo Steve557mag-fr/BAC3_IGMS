@@ -65,16 +65,9 @@ public class Dialog : MonoBehaviour
 
     public void Next(bool bypass=false)
     {
-        if (isBusy || currentIndex == -1) return;
-        //Debug.Log($"{isBusy}");
-        //Debug.Log("so goood");
-        //Debug.Log($"{currentIndex}");
-
+        if (!bypass && (isBusy || currentIndex == -1)) return;
+        
         string[] args = db.GetRawData("ARG", currentIndex).Split(",");
-        //Debug.Log(db.GetRawData("ARG", currentIndex));
-        //print($"args:(${args.Length}) {string.Join(", ", args)}");
-
-        int nextFrag = -1;
         try
         {
             NewFragment(int.Parse(args[0]));

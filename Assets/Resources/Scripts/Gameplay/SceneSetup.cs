@@ -23,9 +23,7 @@ public class SceneSetup : MonoBehaviour
     public void UpdateStep()
     {
         for (int i = 0; i < stepContainers.Length; i++) {
-            stepContainers[
-                Singleton.Get<Game>().gameData.step
-                ].container.SetActive(false);
+            stepContainers[i].container.SetActive(Singleton.Get<Game>().gameData.step == stepContainers[i].stepActivation);
         }
     }
 

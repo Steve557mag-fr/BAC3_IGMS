@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        DisableCharacter();
         Singleton.Make(this);    
     }
 
