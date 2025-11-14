@@ -26,11 +26,12 @@ public class Dialog : MonoBehaviour
         if (isBusy) return;
         isBusy = true;
 
-        Singleton.Get<PlayerController>().DisableCharacter();
 
         int index = db.FindFromColValue("ID", id.ToString());
         if (index == -1) return;
         currentIndex = index;
+
+        Singleton.Get<PlayerController>().DisableCharacter();
 
         string fragMessage = db.GetRawData(Singleton.Get<Game>().lang, index);
         ui.UploadSeq(fragMessage, 
@@ -58,8 +59,7 @@ public class Dialog : MonoBehaviour
         string[] args = db.GetRawData("ARG", currentIndex).Split(",");
         print($"{string.Join(", ", args)}");
         if (args.Length == 0) Close();
-
-        NewFragment(int.Parse(args[0]));
+        else NewFragment(int.Parse(args[0]));
 
     }
 
