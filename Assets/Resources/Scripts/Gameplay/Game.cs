@@ -1,3 +1,4 @@
+using COL1.Utilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +10,7 @@ public class Game : MonoBehaviour
     
     bool isBusy = false;
 
-    GameData gameData;
+    internal GameData gameData;
 
     public void Goto(string sceneName)
     {
@@ -31,6 +32,11 @@ public class Game : MonoBehaviour
         gameData.step = 0;
         Goto("Game");
     }
+    
+    public void SetLang(string val)
+    {
+        lang = val;
+    }
 
     public void Quit()
     {
@@ -38,9 +44,9 @@ public class Game : MonoBehaviour
     }
 
 
-    public static Game Get()
+    public void Awake()
     {
-        return FindAnyObjectByType<Game>();
+        Singleton.Make(this);
     }
 
 }

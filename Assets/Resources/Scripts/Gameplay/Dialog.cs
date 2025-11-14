@@ -14,6 +14,8 @@ public class Dialog : MonoBehaviour
 
     private void Awake()
     {
+        Singleton.Make(this);
+
         db = new(PATH_DB);
         db.FilterDoc("TYPE", (string s) => { return s == "FRAG"; } );
         isBusy = false;
@@ -24,15 +26,17 @@ public class Dialog : MonoBehaviour
         if (isBusy) return;
         isBusy = true;
 
+        Singleton.Get<PlayerController>().DisableCharacter();
+
         int index = db.FindFromColValue("ID", id.ToString());
         if (index == -1) return;
         currentIndex = index;
 
-        string fragMessage = db.GetRawData(Game.Get().lang, index);
+        string fragMessage = db.GetRawData(Singleton.Get<Game>().lang, index);
         ui.UploadSeq(fragMessage, 
             onUpdate: (string s) => {
 
-                if (s.Contains("<link=\"SKIP\">")) Next(true);
+                if (s.Contains("£")) Next(true);
 
             },
             onFinished: () =>
@@ -63,13 +67,10 @@ public class Dialog : MonoBehaviour
         currentIndex = -1;
         ui.CloseSeq();
         isBusy = false;
+        Singleton.Get<PlayerController>().EnableCharacter();
     }
 
 
-    public static Dialog Get()
-    {
-        return FindAnyObjectByType<Dialog>();
-    }
 
 }
 

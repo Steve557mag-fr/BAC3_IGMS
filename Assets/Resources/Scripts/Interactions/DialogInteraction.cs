@@ -1,3 +1,4 @@
+using COL1.Utilities;
 using UnityEngine;
 
 public class DialogInteraction : BaseInteraction
@@ -8,7 +9,7 @@ public class DialogInteraction : BaseInteraction
 
     public override void Interact()
     {
-        Dialog.Get().NewFragment(dialogID);
+        Singleton.Get<Dialog>().NewFragment(dialogID);
     }
 
 }
