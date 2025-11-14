@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: f5bf216b50bff064caf650f5d3afdd5b
+guid: fcf9fc5448d8ad54eb7b9738b15234ed
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Murs_Platre
+    second: {fileID: 2100000, guid: 6cef661aa14e4744ab2ebec665685b60, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
