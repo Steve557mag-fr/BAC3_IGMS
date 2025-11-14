@@ -584,7 +584,17 @@ MonoBehaviour:
     onEvent:
       m_PersistentCalls:
         m_Calls: []
-  richs: []
+  richs:
+  - name: SARAH
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - name: TREJA
+    color: {r: 0.34117648, g: 0.05490196, b: 0.34117648, a: 1}
+  - name: PRIXY
+    color: {r: 0.9098039, g: 0.20784314, b: 0.20784314, a: 1}
+  - name: LILLY
+    color: {r: 0.20784314, g: 0.6627451, b: 0.9098039, a: 1}
+  - name: EVER
+    color: {r: 0.9098039, g: 0.6156863, b: 0.20784314, a: 1}
 --- !u!114 &4543116495562683048
 MonoBehaviour:
   m_ObjectHideFlags: 0

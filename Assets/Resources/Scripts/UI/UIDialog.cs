@@ -27,6 +27,7 @@ public class UIDialog : MonoBehaviour
         }).setOnComplete(() =>
         {
             Debug.Log("FINNNN");
+            dialogText.text = message;
             onFinished?.Invoke();
         });
 
@@ -34,7 +35,7 @@ public class UIDialog : MonoBehaviour
 
     public void SetRich(CharacterRich? characterRich)
     {
-        dialogText.color = characterRich.HasValue ? Color.white : characterRich.Value.color;
+        dialogText.color = characterRich.HasValue ? characterRich.Value.color : Color.white;
 
     }
 

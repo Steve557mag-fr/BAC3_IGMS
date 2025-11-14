@@ -64,7 +64,7 @@ namespace COL1.Utilities
         {
             int i = FromHeader(col);
             CSVRow row = GetRow(id);
-            Debug.Log($"row : {row} | i: {i} | doc_headers:{string.Join(',', header)}");
+            //Debug.Log($"row : {row} | i: {i} | doc_headers:{string.Join(',', header)}");
             return row.Get(i);
         }
 

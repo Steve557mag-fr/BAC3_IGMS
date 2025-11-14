@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     Vector2 headRotation;
     Vector2 moveValue;
     bool isCursorLocked = true;
+    bool isHeadLocked = false;
 
     Action onMoveFinished;
 
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
     public void OnLook(InputValue val)
     {
         var lookValue = val.Get<Vector2>();
+
+        if (isHeadLocked) return; 
 
         headRotation.x -= lookValue.y * headSensibility * Time.deltaTime;
         headRotation.y += lookValue.x * headSensibility * Time.deltaTime;
@@ -95,10 +98,12 @@ public class PlayerController : MonoBehaviour
     {
         agent.enabled = false;
         controller.enabled = true;
+        isHeadLocked = false;
     }
 
     public void DisableCharacter()
     {
+        isHeadLocked = true;
         controller.enabled = false;
     }
 
