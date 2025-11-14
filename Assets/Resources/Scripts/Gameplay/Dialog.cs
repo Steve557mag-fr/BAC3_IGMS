@@ -56,6 +56,7 @@ public class Dialog : MonoBehaviour
 
         Debug.Log(db.GetRawData("ARG", currentIndex));
         string[] args = db.GetRawData("ARG", currentIndex).Split(",");
+        print($"{string.Join(", ", args)}");
         if (args.Length == 0) Close();
 
         NewFragment(int.Parse(args[0]));
@@ -68,6 +69,7 @@ public class Dialog : MonoBehaviour
         ui.CloseSeq();
         isBusy = false;
         Singleton.Get<PlayerController>().EnableCharacter();
+        Debug.Log("END!");
     }
 
 

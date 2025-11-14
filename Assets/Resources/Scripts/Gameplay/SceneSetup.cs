@@ -21,6 +21,8 @@ public class SceneSetup : MonoBehaviour
 
 }
 
+
+[System.Serializable]
 public struct SceneInstruction
 {
     public int stepActivation;
