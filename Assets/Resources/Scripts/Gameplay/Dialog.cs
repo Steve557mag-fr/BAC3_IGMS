@@ -58,8 +58,7 @@ public class Dialog : MonoBehaviour
         string[] args = db.GetRawData("ARG", currentIndex).Split(",");
         print($"{string.Join(", ", args)}");
         if (args.Length == 0) Close();
-
-        NewFragment(int.Parse(args[0]));
+        else NewFragment(int.Parse(args[0]));
 
     }
 
