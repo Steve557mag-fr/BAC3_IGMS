@@ -55,11 +55,18 @@ public class Dialog : MonoBehaviour
         //Debug.Log("so goood");
         //Debug.Log($"{currentIndex}");
 
-        Debug.Log(db.GetRawData("ARG", currentIndex));
         string[] args = db.GetRawData("ARG", currentIndex).Split(",");
-        print($"{string.Join(", ", args)}");
-        if (args.Length == 0) Close();
-        else NewFragment(int.Parse(args[0]));
+        //Debug.Log(db.GetRawData("ARG", currentIndex));
+        //print($"args:(${args.Length}) {string.Join(", ", args)}");
+
+        int nextFrag = -1;
+        try
+        {
+            NewFragment(int.Parse(args[0]));
+        }
+        catch {
+            Close();
+        }
 
     }
 
@@ -69,7 +76,7 @@ public class Dialog : MonoBehaviour
         ui.CloseSeq();
         isBusy = false;
         Singleton.Get<PlayerController>().EnableCharacter();
-        Debug.Log("END!");
+        //Debug.Log("END!");
     }
 
 
