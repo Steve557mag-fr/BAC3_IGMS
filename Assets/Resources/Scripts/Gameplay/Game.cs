@@ -61,9 +61,6 @@ public class Game : MonoBehaviour
     public void Awake()
     {
         Singleton.Make(this);
-#if UNITY_EDITOR
-        StartGame();
-#endif
     }
 
 }
