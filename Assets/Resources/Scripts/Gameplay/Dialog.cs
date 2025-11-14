@@ -9,13 +9,16 @@ public class Dialog : MonoBehaviour
 
     const string PATH_DB = "CSV/loc_texts_entries";
     bool isBusy = false;
-    int currentIndex = 0;
+    int currentIndex = -1;
     CSVDocument db;
 
     private void Awake()
     {
+        Singleton.Make(this);
+
         db = new(PATH_DB);
         db.FilterDoc("TYPE", (string s) => { return s == "FRAG"; } );
+        isBusy = false;
     }
 
     public void NewFragment(int id)
@@ -23,15 +26,17 @@ public class Dialog : MonoBehaviour
         if (isBusy) return;
         isBusy = true;
 
+        Singleton.Get<PlayerController>().DisableCharacter();
+
         int index = db.FindFromColValue("ID", id.ToString());
         if (index == -1) return;
         currentIndex = index;
 
-        string fragMessage = db.GetRawData(Game.Get().lang, index);
+        string fragMessage = db.GetRawData(Singleton.Get<Game>().lang, index);
         ui.UploadSeq(fragMessage, 
             onUpdate: (string s) => {
 
-                //if (s.Contains("<skip></")) Next(true); SKIP TRICK : todo with team
+                if (s.Contains("£")) Next(true);
 
             },
             onFinished: () =>
@@ -44,19 +49,28 @@ public class Dialog : MonoBehaviour
 
     public void Next(bool bypass=false)
     {
-        if (bypass || !isBusy) return;
+        if (bypass || isBusy || currentIndex == -1) return;
+        //Debug.Log($"{isBusy}");
+        //Debug.Log("so goood");
+        //Debug.Log($"{currentIndex}");
 
+        Debug.Log(db.GetRawData("ARG", currentIndex));
         string[] args = db.GetRawData("ARG", currentIndex).Split(",");
-        if (args.Length == 0) ui.CloseSeq();
+        if (args.Length == 0) Close();
 
         NewFragment(int.Parse(args[0]));
 
     }
 
-    public static Dialog Get()
+    public void Close()
     {
-        return FindAnyObjectByType<Dialog>();
+        currentIndex = -1;
+        ui.CloseSeq();
+        isBusy = false;
+        Singleton.Get<PlayerController>().EnableCharacter();
     }
+
+
 
 }
 

@@ -6,6 +6,22 @@ namespace COL1.Utilities {
 
     public class MathUtils
     {
+        public static Vector3 ClampVector(Vector3 v, float l = 1)
+        {
+            return v.magnitude >= l ? v.normalized * l : v; 
+        }
+
+        public static float AngleX(Vector3 a, Vector3 b)
+        {
+            Vector3 d = (b - a).normalized;
+            return Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
+        }
+        public static float AngleY(Vector3 a, Vector3 b)
+        {
+            Vector3 d = (b - a).normalized;
+            return Mathf.Atan2(d.z, d.x) * Mathf.Rad2Deg;
+        }   
+
         public static float InverseLerp(Vector3 a, Vector3 b, Vector3 value)
         {
             Vector3 AB = b - a;
