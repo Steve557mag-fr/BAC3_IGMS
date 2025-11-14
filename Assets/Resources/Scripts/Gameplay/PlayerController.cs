@@ -170,6 +170,17 @@ public class PlayerController : MonoBehaviour
         stepType = newStepType;
     }
 
+    public void SetSpawnpoint()
+    {
+        DisableCharacter();
+        Vector3 p = FindAnyObjectByType<Spawnpoint>().transform.position;
+
+        transform.position = p;
+            
+        EnableCharacter();
+
+    }
+
 }
 
 public enum StepType

@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class SceneSetup : MonoBehaviour
 {
+    [SerializeField] UnityEvent onBegin;
+
     [SerializeField] List<SceneInstruction> instructions;
     [SerializeField] StepContainer[] stepContainers;
 
@@ -18,6 +20,7 @@ public class SceneSetup : MonoBehaviour
         }
 
         UpdateStep();
+        onBegin?.Invoke();
     }
 
     public void UpdateStep()

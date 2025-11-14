@@ -17,6 +17,9 @@ public class PlayerHandler : ScriptableObject
             case PlayerMethod.STEP_TYPE:
                 Singleton.Get<PlayerController>().SetWalkType(stepType);
                 break;
+            case PlayerMethod.SET_SPAWNPOINT:
+                Singleton.Get<PlayerController>().SetSpawnpoint();
+                break;
         }
     }
 
@@ -24,6 +27,6 @@ public class PlayerHandler : ScriptableObject
 
 enum PlayerMethod
 {
-    PLAYER_DISABLE, STEP_TYPE
+    PLAYER_DISABLE, STEP_TYPE, SET_SPAWNPOINT
 }
 
