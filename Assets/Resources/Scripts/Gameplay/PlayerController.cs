@@ -1,8 +1,10 @@
 using System;
 using COL1.Utilities;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -15,6 +17,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float headSensibility;
     [SerializeField] float interactDistance = 10;
 
+    [SerializeField] AudioSource stepHouse, stepStreet, stepShop;
+
+    [SerializeField] float stepTimerRate = 1;
+    float stepTimer = 0;
+
+    StepType stepType;
+
+
+    Vector3 oldPosition;
     Vector2 headRotation;
     Vector2 moveValue;
     bool isCursorLocked = true;
@@ -86,6 +97,35 @@ public class PlayerController : MonoBehaviour
             EnableCharacter();
         }
 
+        Vector3 vel = transform.position - oldPosition;
+        oldPosition = transform.position;
+
+        if(vel.magnitude >= 0.01f)
+        {
+            stepTimer -= Time.deltaTime;
+            print(stepTimer);
+
+            if (stepTimer <= 0)
+            {
+                stepTimer = stepTimerRate;
+                switch (stepType)
+                {
+                    case StepType.HOUSE:
+                        stepHouse.Play();
+                        break;
+
+                    case StepType.STREET:
+                        stepStreet.Play();
+                        break;
+
+                    case StepType.SHOP:
+                        stepShop.Play();
+                        break;
+
+                }
+            }
+        }
+
     }
 
     public void MoveTo(Transform destination)
@@ -115,4 +155,16 @@ public class PlayerController : MonoBehaviour
         head.transform.LookAt(target.position);
     }
 
+    public void SetWalkType(StepType newStepType)
+    {
+        stepType = newStepType;
+    }
+
+}
+
+public enum StepType
+{
+    HOUSE,
+    STREET,
+    SHOP
 }

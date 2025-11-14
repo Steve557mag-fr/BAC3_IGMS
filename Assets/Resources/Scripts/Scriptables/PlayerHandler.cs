@@ -5,13 +5,17 @@ using UnityEngine;
 public class PlayerHandler : ScriptableObject
 {
     [SerializeField] PlayerMethod methods;
-    
+    [SerializeField] StepType stepType;
+
     public void Interact()
     {
         switch (methods)
         {
             case PlayerMethod.PLAYER_DISABLE:
                 Singleton.Get<PlayerController>().DisableCharacter();
+                break;
+            case PlayerMethod.STEP_TYPE:
+                Singleton.Get<PlayerController>().SetWalkType(stepType);
                 break;
         }
     }
@@ -20,6 +24,6 @@ public class PlayerHandler : ScriptableObject
 
 enum PlayerMethod
 {
-    PLAYER_DISABLE
+    PLAYER_DISABLE, STEP_TYPE
 }
 

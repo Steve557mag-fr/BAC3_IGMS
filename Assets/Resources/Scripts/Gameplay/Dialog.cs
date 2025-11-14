@@ -28,6 +28,7 @@ public class Dialog : MonoBehaviour
         if (isBusy) return;
         isBusy = true;
 
+        print($"doc : {db.GetRows().Length}");
 
         int index = db.FindFromColValue("ID", id.ToString());
         string name = db.GetRawData("NAME", index);

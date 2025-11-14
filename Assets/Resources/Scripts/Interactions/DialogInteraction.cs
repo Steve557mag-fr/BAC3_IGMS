@@ -9,6 +9,7 @@ public class DialogInteraction : BaseInteraction
 
     public override void Interact()
     {
+        onInteract?.Invoke();
         Singleton.Get<Dialog>().NewFragment(dialogID);
     }
 
