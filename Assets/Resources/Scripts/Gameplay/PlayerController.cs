@@ -105,6 +105,8 @@ public class PlayerController : MonoBehaviour
     public void LookAt(Transform target)
     {
         //TODO
+        transform.LookAt(target.position, Vector3.up);
+        head.transform.LookAt(target.position);
     }
 
 }

@@ -31,6 +31,13 @@ public class UIDialog : MonoBehaviour
         });
 
     }
+
+    public void SetRich(CharacterRich? characterRich)
+    {
+        dialogText.color = characterRich.HasValue ? Color.white : characterRich.Value.color;
+
+    }
+
     public void CloseSeq()
     {
         dialogPanel.SetActive(false);
