@@ -31,7 +31,7 @@ public class Game : MonoBehaviour
     {
         //FindAnyObjectByType<SceneSetup>().UpdateStep();
         gameData = new();
-        Goto("Game");
+        Goto("House");
     }
     
     public void SetStep(int step = 0)
