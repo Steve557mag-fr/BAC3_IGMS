@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Resources/Scenes/Street.unity
+    guid: 7be95f02d6582b64794ba436e6d87fd8
+  - enabled: 1
+    path: Assets/Resources/Scenes/Market.unity
+    guid: c3c2f4ad49fd2c04cb7d3b04c17ff3fd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
