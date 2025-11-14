@@ -1,8 +1,8 @@
 ﻿ID;TYPE;ARG;NAME;SPEED;frFR;enGB
 1;FRAG;2;SARAH;NORMAL;Hmm.. Jsuis tellement fatiguée;Ah.. I'm so tired.
 2;FRAG;3;SARAH;NORMAL;*S'étire*;*Stretch*
-3;FRAG;4;SARAH;NORMAL;Je vais me rincer le visage, ça devrait me réveiller;I'll put some water on my face, that should wake me up.
-4;FRAG;;SARAH;NORMAL;*Se regarde dans le miroir*;*Checks mirror*
+3;FRAG;;SARAH;NORMAL;Je vais me rincer le visage, ça devrait me réveiller;I'll put some water on my face, that should wake me up.
+4;FRAG;5;SARAH;NORMAL;*Se regarde dans le miroir*;*Checks mirror*
 5;FRAG;6;SARAH;NORMAL;Ah.. J'ai tellement faim, je devrais aller me chercher quelque chose à manger.;Ugh I'm so hungry, I should go get something to eat.
 6;FRAG;7;SARAH;NORMAL;Faudrait peut-être que je m'habille avant de sortir.;I should probably throw something on before leaving though.
 7;FRAG;8;SARAH;NORMAL;*Enfile des vêtements et se regarde à nouveau dans le miroir.;*Change Clothes & Look back at mirror*
@@ -18,7 +18,7 @@
 17;FRAG;18;SARAH;NORMAL;Et, pourquoi t'es là? Tu es.. moi..?;And, why are you here? Are you me?
 18;FRAG;19;TREJA;SLOW;Non, pas vraiment.;No, Not really.
 19;FRAG;20;TREJA;SLOW;Et j'veux juste... pas sortir... J'préfèrerais rester ici et lire un livre..;And I just... don't wanna go out, I'd rather stay in and read a book..
-20;FRAG;21;SARAH;NORMAL;Mais on doit manger, c'est un peu un besoin vital !;But we need to eat, it's like a basic need.
+20;FRAG;21;SARAH;NORMAL;Mais on <b>doit</b> manger, c'est un peu un besoin vital !;But we <b>need</b> to eat, it's like a basic need.
 21;FRAG;22;TREJA;SLOW;Pff.. Naah;Ughh nah...
 22;FRAG;23;SARAH;NORMAL;T'en fais pas, tu pourras lire ce que tu veux quand on reviendra !;It's ok, you'll be able to read whatever you want once we get back.
 23;FRAG;24;TREJA;NORMAL;"Ah ouais ? Même ""La mystérieuse affaire de style"" ??";"Oh? Like ""The mysterious affair at style ""??"
@@ -54,7 +54,7 @@
 53;NONE;54;SARAH'S DAD;NORMAL;Donc c'est moi qui décide.;I decide.
 54;NONE;55;SARAH'S DAD;NORMAL;Arrête de jeter de l'argent par les fenêtre. Espèce de déchet parasite.;Stop throwing away my money down the drain. You useless waste.
 55;NONE;56;SARAH'S MOM;SLOW;Je suis désolé.. Je.. Je ferai plus attention la prochaine fois.;I'm sorry.. I.. I'll be more thoughtful.
-56;NONE;57;SARAH'S DAD;NORMAL;*Clac* £;*Slap* £
+56;NONE;57;SARAH'S DAD;NORMAL;<b>*Clac*</b> £;<b>*Slap*</b> £
 57;NONE;58;SARAH'S DAD;FAST;JE VEUX PAS D'EXCUSES, J'VEUX MON ARGENT;I DON'T WANT EXCUSES. I WANT MY WASTED MONEY BACK.
 58;NONE;59;LILLY;SLOW;Maman me manque..;I miss mama...
 59;NONE;60;LILLY;SLOW;C'était vraiment la meilleure...;She was the best.
@@ -68,7 +68,7 @@
 67;NONE;;SARAH;SLOW;Je suppose que tu as raison. Je vais en prendre.;I guess you're right. I'll take some.
 68;NONE;69;CASHIER;NORMAL;Bonjour ! ;Hello!
 69;NONE;70;SARAH;SLOW;Bonjour..;Hi..
-70;NONE;71;CASHIER;NORMAL;Ca vous fera 10.53 euros;That'll be 10.53 euros
+70;NONE;71;CASHIER;NORMAL;Ça vous fera 10.53€;That'll be 10.53€
 71;NONE;72;SARAH;NORMAL;...;...
 72;NONE;73;CASHIER;NORMAL;Madame?;Miss ?
 73;NONE;74;LILLY;FAST;Oui ! Tenez, merci !!;Yes! Here you go! Thank you!!
