@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class SceneSetup : MonoBehaviour
 {
-
     [SerializeField] List<SceneInstruction> instructions;
+    [SerializeField] GameObject[] stepContainers;
 
     public void Awake()
     {
@@ -16,8 +16,18 @@ public class SceneSetup : MonoBehaviour
             instructions[i].instruction?.Invoke();
             return;
         }
+
+        UpdateStep();
     }
 
+    private void UpdateStep()
+    {
+        for (int i = 0; i < stepContainers.Length; i++) {
+            stepContainers[
+                Singleton.Get<Game>().gameData.step
+                ].SetActive(false);
+        }
+    }
 
 }
 
