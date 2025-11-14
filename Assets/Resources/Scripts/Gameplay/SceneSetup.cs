@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class SceneSetup : MonoBehaviour
 {
     [SerializeField] List<SceneInstruction> instructions;
-    [SerializeField] GameObject[] stepContainers;
+    [SerializeField] StepContainer[] stepContainers;
 
     public void Awake()
     {
@@ -25,7 +25,7 @@ public class SceneSetup : MonoBehaviour
         for (int i = 0; i < stepContainers.Length; i++) {
             stepContainers[
                 Singleton.Get<Game>().gameData.step
-                ].SetActive(false);
+                ].container.SetActive(false);
         }
     }
 
@@ -39,3 +39,9 @@ public struct SceneInstruction
     public UnityEvent instruction;
 }
 
+[System.Serializable]
+public struct StepContainer
+{
+    public int stepActivation;
+    public GameObject container;
+}
