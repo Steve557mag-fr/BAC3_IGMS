@@ -1,8 +1,10 @@
 using System;
 using COL1.Utilities;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -15,9 +17,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float headSensibility;
     [SerializeField] float interactDistance = 10;
 
+    [SerializeField] AudioSource stepHouse, stepStreet, stepShop;
+
+    [SerializeField] float stepTimerRate = 1;
+    float stepTimer = 0;
+
+    StepType stepType;
+
+
+    Vector3 oldPosition;
     Vector2 headRotation;
     Vector2 moveValue;
     bool isCursorLocked = true;
+    bool isHeadLocked = false;
+    bool isPaused = false;
 
     Action onMoveFinished;
 
@@ -38,6 +51,8 @@ public class PlayerController : MonoBehaviour
     {
         var lookValue = val.Get<Vector2>();
 
+        if (isHeadLocked) return; 
+
         headRotation.x -= lookValue.y * headSensibility * Time.deltaTime;
         headRotation.y += lookValue.x * headSensibility * Time.deltaTime;
 
@@ -52,8 +67,18 @@ public class PlayerController : MonoBehaviour
         Singleton.Get<Dialog>().Next();
     }
 
+    public void OnPause()
+    {
+        isPaused = !isPaused;
+
+        Time.timeScale = isPaused ? 0.0f : 1.0f;
+        ui.SetPause(isPaused);
+    }
+
+
     private void Awake()
     {
+        DisableCharacter();
         Singleton.Make(this);    
     }
 
@@ -70,7 +95,7 @@ public class PlayerController : MonoBehaviour
          
         if (Keyboard.current[Key.Tab].wasPressedThisFrame) isCursorLocked = !isCursorLocked;
         Cursor.lockState = isCursorLocked ? CursorLockMode.Locked : CursorLockMode.None;
-        
+
         if (Physics.Raycast(head.transform.position, head.transform.forward, out RaycastHit hit, interactDistance))
             ui.UpdateInteract(hit.transform.GetComponent<BaseInteraction>() != null);
         else ui.UpdateInteract(false);
@@ -80,6 +105,35 @@ public class PlayerController : MonoBehaviour
             onMoveFinished?.Invoke();
             onMoveFinished = null;
             EnableCharacter();
+        }
+
+        Vector3 vel = transform.position - oldPosition;
+        oldPosition = transform.position;
+
+        if(vel.magnitude >= 0.01f)
+        {
+            stepTimer -= Time.deltaTime;
+            print(stepTimer);
+
+            if (stepTimer <= 0)
+            {
+                stepTimer = stepTimerRate;
+                switch (stepType)
+                {
+                    case StepType.HOUSE:
+                        stepHouse.Play();
+                        break;
+
+                    case StepType.STREET:
+                        stepStreet.Play();
+                        break;
+
+                    case StepType.SHOP:
+                        stepShop.Play();
+                        break;
+
+                }
+            }
         }
 
     }
@@ -95,16 +149,43 @@ public class PlayerController : MonoBehaviour
     {
         agent.enabled = false;
         controller.enabled = true;
+        isHeadLocked = false;
     }
 
     public void DisableCharacter()
     {
+        isHeadLocked = true;
         controller.enabled = false;
     }
 
     public void LookAt(Transform target)
     {
         //TODO
+        transform.LookAt(target.position, Vector3.up);
+        head.transform.LookAt(target.position);
     }
 
+    public void SetWalkType(StepType newStepType)
+    {
+        stepType = newStepType;
+    }
+
+    public void SetSpawnpoint()
+    {
+        DisableCharacter();
+        Vector3 p = FindAnyObjectByType<Spawnpoint>().transform.position;
+
+        transform.position = p;
+            
+        EnableCharacter();
+
+    }
+
+}
+
+public enum StepType
+{
+    HOUSE,
+    STREET,
+    SHOP
 }

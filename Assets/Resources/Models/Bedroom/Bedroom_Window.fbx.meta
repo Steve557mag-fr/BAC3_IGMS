@@ -3,7 +3,22 @@ guid: 719d7f931514ef5459439712567ded05
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chambre_Fenetre
+    second: {fileID: 2100000, guid: 0ca24b2cc98602349b896acb73734767, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cuisine_Comptoir_Bois
+    second: {fileID: 2100000, guid: e33f445073886e541b04822f777c86ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cuisine_Comptoir_MDF
+    second: {fileID: 2100000, guid: 047e3e0d4505ee8459affde8375061df, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,7 +50,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1

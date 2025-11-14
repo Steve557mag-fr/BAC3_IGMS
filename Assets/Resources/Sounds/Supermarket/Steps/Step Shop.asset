@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-8424877057100687364
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_StepTiles_6_{-8424877057100687364}
+  m_AudioClip: {fileID: 8300000, guid: 2713ab6c2094018408ee03537418e0ff, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-3174414104648388136
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_StepTiles_4_{-3174414104648388136}
+  m_AudioClip: {fileID: 8300000, guid: d696c72ddaf78654a884b6762447de8b, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-2759813945503995934
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_StepTiles_5_{-2759813945503995934}
+  m_AudioClip: {fileID: 8300000, guid: 42f5b759ce93f6d418badc9692d971ee, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1896085266331145602
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_StepTiles_3_{-1896085266331145602}
+  m_AudioClip: {fileID: 8300000, guid: 06473472162407e45929ec9ce2f727a4, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1159078217891068608
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_StepTiles_7_{-1159078217891068608}
+  m_AudioClip: {fileID: 8300000, guid: f727d04b30e754545b78d5697fc0ace9, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &461671104850411414
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_StepTiles_1_{461671104850411414}
+  m_AudioClip: {fileID: 8300000, guid: a6fe4c5dccfa6734b8217d426fda7efe, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &4365966797712913071
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_StepTiles_2_{4365966797712913071}
+  m_AudioClip: {fileID: 8300000, guid: fe140e6708830a14d9192074f143642c, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Step Shop
+  m_Volume: 0
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: -5, y: 5}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: 461671104850411414}
+  - {fileID: 4365966797712913071}
+  - {fileID: -1896085266331145602}
+  - {fileID: -3174414104648388136}
+  - {fileID: -2759813945503995934}
+  - {fileID: -8424877057100687364}
+  - {fileID: -1159078217891068608}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 1
+  m_TriggerMode: 1
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 1
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0

@@ -1,11 +1,14 @@
 using COL1.Utilities;
+using Unity.Loading;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class Dialog : MonoBehaviour
 {
     [SerializeField] UIDialog ui;
-    [SerializeField] DialogEvent dialogEvents;
+    [SerializeField] DialogEvent[] dialogEvents;
+    [SerializeField] CharacterRich[] richs;
 
     const string PATH_DB = "CSV/loc_texts_entries";
     bool isBusy = false;
@@ -26,17 +29,28 @@ public class Dialog : MonoBehaviour
         if (isBusy) return;
         isBusy = true;
 
-        Singleton.Get<PlayerController>().DisableCharacter();
+        print($"doc : {db.GetRows().Length}");
 
         int index = db.FindFromColValue("ID", id.ToString());
+        string name = db.GetRawData("NAME", index);
         if (index == -1) return;
         currentIndex = index;
 
+        ui.SetRich(GetRich(name));
+
+        Singleton.Get<PlayerController>().DisableCharacter();
         string fragMessage = db.GetRawData(Singleton.Get<Game>().lang, index);
+
+        print(fragMessage);
+
         ui.UploadSeq(fragMessage, 
             onUpdate: (string s) => {
 
-                if (s.Contains("£")) Next(true);
+                if (s.Contains("£"))
+                {
+                    Next(true);
+                    Debug.Log("NEXXT");
+                }
 
             },
             onFinished: () =>
@@ -45,20 +59,41 @@ public class Dialog : MonoBehaviour
             }
         );
 
+
+        foreach(var e in dialogEvents)
+        {
+            if(e.dialogID == index)
+            {
+                e.onEvent?.Invoke();
+                break;
+            }
+        }
+
+    }
+
+    public CharacterRich? GetRich(string name)
+    {
+        for(int i = 0; i < richs.Length; i++)
+        {
+            if (richs[i].name != name) continue;
+            return richs[i];
+        }
+
+        return null;
     }
 
     public void Next(bool bypass=false)
     {
-        if (bypass || isBusy || currentIndex == -1) return;
-        //Debug.Log($"{isBusy}");
-        //Debug.Log("so goood");
-        //Debug.Log($"{currentIndex}");
-
-        Debug.Log(db.GetRawData("ARG", currentIndex));
+        if (!bypass && (isBusy || currentIndex == -1)) return;
+        
         string[] args = db.GetRawData("ARG", currentIndex).Split(",");
-        if (args.Length == 0) Close();
-
-        NewFragment(int.Parse(args[0]));
+        try
+        {
+            NewFragment(int.Parse(args[0]));
+        }
+        catch {
+            Close();
+        }
 
     }
 
@@ -68,6 +103,7 @@ public class Dialog : MonoBehaviour
         ui.CloseSeq();
         isBusy = false;
         Singleton.Get<PlayerController>().EnableCharacter();
+        //Debug.Log("END!");
     }
 
 
@@ -79,5 +115,12 @@ public struct DialogEvent
 {
     public int dialogID;
     public UnityEvent onEvent;
-} 
+}
+
+[System.Serializable]
+public struct CharacterRich
+{
+    public string name;
+    public Color color;
+}
 

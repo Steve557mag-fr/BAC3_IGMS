@@ -1,9 +1,10 @@
+using COL1.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIPlayer : MonoBehaviour
 {
-    [SerializeField] GameObject visualInteractGroup;
+    [SerializeField] GameObject visualInteractGroup, pauseContainer;
     [SerializeField] Image reticle;
     [SerializeField] float minReticle, maxReticle;
 
@@ -31,5 +32,15 @@ public class UIPlayer : MonoBehaviour
         visualInteractGroup.SetActive(underInteraction);
     }
 
+    public void SetPause(bool pauseMode)
+    {
+        pauseContainer.SetActive(pauseMode);
+    }
+
+    public void backMenu()
+    {
+        Singleton.Get<Game>().Goto("Menu");
+        Destroy(Singleton.Get<PlayerController>().gameObject);
+    }
 
 }

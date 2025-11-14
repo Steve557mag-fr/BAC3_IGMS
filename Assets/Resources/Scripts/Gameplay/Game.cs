@@ -29,10 +29,24 @@ public class Game : MonoBehaviour
 
     public void StartGame()
     {
-        gameData.step = 0;
-        Goto("Game");
+        //FindAnyObjectByType<SceneSetup>().UpdateStep();
+
+        SetStep(0);
+        gameData = new();
+        Goto("House");
     }
     
+    public void SetStep(int step)
+    {
+        gameData.step = step;
+        foreach (var e in FindObjectsByType<SceneSetup>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            e.UpdateStep();
+        }
+        Debug.Log($"STEP UPDATED to {step}");
+
+    }
+
     public void SetLang(string val)
     {
         lang = val;
