@@ -28,6 +28,7 @@ public class UIDialog : MonoBehaviour
         {
             Debug.Log("FINNNN");
             dialogText.text = message;
+            dialogText.text = message;
             onFinished?.Invoke();
         });
 

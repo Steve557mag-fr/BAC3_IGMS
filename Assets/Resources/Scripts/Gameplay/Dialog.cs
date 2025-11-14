@@ -38,6 +38,9 @@ public class Dialog : MonoBehaviour
 
         Singleton.Get<PlayerController>().DisableCharacter();
         string fragMessage = db.GetRawData(Singleton.Get<Game>().lang, index);
+
+        print(fragMessage);
+
         ui.UploadSeq(fragMessage, 
             onUpdate: (string s) => {
 
