@@ -3388,10 +3388,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7930356893100025065, guid: cc37991d387e84140b6100a5b4314662, type: 3}
-      propertyPath: m_overflowMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8866079197710923677, guid: cc37991d387e84140b6100a5b4314662, type: 3}
       propertyPath: m_Name
       value: == GAME ==

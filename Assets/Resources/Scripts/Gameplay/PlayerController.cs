@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     Vector2 moveValue;
     bool isCursorLocked = true;
     bool isHeadLocked = false;
+    bool isPaused = false;
 
     Action onMoveFinished;
 
@@ -66,6 +67,15 @@ public class PlayerController : MonoBehaviour
         Singleton.Get<Dialog>().Next();
     }
 
+    public void OnPause()
+    {
+        isPaused = !isPaused;
+
+        Time.timeScale = isPaused ? 0.0f : 1.0f;
+        ui.SetPause(isPaused);
+    }
+
+
     private void Awake()
     {
         DisableCharacter();
@@ -85,7 +95,7 @@ public class PlayerController : MonoBehaviour
          
         if (Keyboard.current[Key.Tab].wasPressedThisFrame) isCursorLocked = !isCursorLocked;
         Cursor.lockState = isCursorLocked ? CursorLockMode.Locked : CursorLockMode.None;
-        
+
         if (Physics.Raycast(head.transform.position, head.transform.forward, out RaycastHit hit, interactDistance))
             ui.UpdateInteract(hit.transform.GetComponent<BaseInteraction>() != null);
         else ui.UpdateInteract(false);

@@ -2,11 +2,12 @@ using COL1.Utilities;
 using Unity.Loading;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class Dialog : MonoBehaviour
 {
     [SerializeField] UIDialog ui;
-    [SerializeField] DialogEvent dialogEvents;
+    [SerializeField] DialogEvent[] dialogEvents;
     [SerializeField] CharacterRich[] richs;
 
     const string PATH_DB = "CSV/loc_texts_entries";
@@ -45,7 +46,11 @@ public class Dialog : MonoBehaviour
         ui.UploadSeq(fragMessage, 
             onUpdate: (string s) => {
 
-                if (s.Contains("£")) Next(true);
+                if (s.Contains("£"))
+                {
+                    Next(true);
+                    Debug.Log("NEXXT");
+                }
 
             },
             onFinished: () =>
@@ -53,6 +58,16 @@ public class Dialog : MonoBehaviour
                 isBusy = false;
             }
         );
+
+
+        foreach(var e in dialogEvents)
+        {
+            if(e.dialogID == index)
+            {
+                e.onEvent?.Invoke();
+                break;
+            }
+        }
 
     }
 
