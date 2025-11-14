@@ -1,3 +1,4 @@
+using COL1.Utilities;
 using UnityEngine;
 
 public class TeleportInteraction : BaseInteraction
@@ -7,7 +8,7 @@ public class TeleportInteraction : BaseInteraction
 
     public override void Interact()
     {
-        Game.Get().Goto(sceneName);
+        Singleton.Get<Game>().Goto(sceneName);
     }
 
 }
