@@ -20,7 +20,7 @@ public class SceneSetup : MonoBehaviour
         UpdateStep();
     }
 
-    private void UpdateStep()
+    public void UpdateStep()
     {
         for (int i = 0; i < stepContainers.Length; i++) {
             stepContainers[

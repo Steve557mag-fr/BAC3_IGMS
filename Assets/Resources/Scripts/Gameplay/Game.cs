@@ -29,10 +29,15 @@ public class Game : MonoBehaviour
 
     public void StartGame()
     {
-        gameData.step = 0;
+        FindAnyObjectByType<SceneSetup>().UpdateStep();
         Goto("Game");
     }
     
+    public void SetStep(int step = 0)
+    {
+        gameData.step = step;
+    }
+
     public void SetLang(string val)
     {
         lang = val;
