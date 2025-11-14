@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
         }
          
         if (Keyboard.current[Key.Tab].wasPressedThisFrame) isCursorLocked = !isCursorLocked;
+        if (Keyboard.current[Key.M].wasPressedThisFrame) EnableCharacter();
         Cursor.lockState = isCursorLocked ? CursorLockMode.Locked : CursorLockMode.None;
 
         if (Physics.Raycast(head.transform.position, head.transform.forward, out RaycastHit hit, interactDistance))
