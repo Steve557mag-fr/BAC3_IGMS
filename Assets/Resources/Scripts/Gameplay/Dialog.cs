@@ -65,7 +65,7 @@ public class Dialog : MonoBehaviour
 
     public void Next(bool bypass=false)
     {
-        if (bypass || isBusy || currentIndex == -1) return;
+        if (isBusy || currentIndex == -1) return;
         //Debug.Log($"{isBusy}");
         //Debug.Log("so goood");
         //Debug.Log($"{currentIndex}");
