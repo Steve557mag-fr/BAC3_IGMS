@@ -29,7 +29,8 @@ public class Game : MonoBehaviour
 
     public void StartGame()
     {
-        FindAnyObjectByType<SceneSetup>().UpdateStep();
+        //FindAnyObjectByType<SceneSetup>().UpdateStep();
+        gameData = new();
         Goto("Game");
     }
     
