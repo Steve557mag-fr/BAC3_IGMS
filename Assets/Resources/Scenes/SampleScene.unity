@@ -22932,6 +22932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1280377760}
   - component: {fileID: 1280377759}
+  - component: {fileID: 1280377761}
   m_Layer: 0
   m_Name: SceneSetup
   m_TagString: Untagged
@@ -22951,6 +22952,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 332178b95079140439910f9d4d061265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneSetup
+  instructions:
+  - stepActivation: 0
+    instruction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1280377761}
+          m_TargetAssemblyTypeName: DialogInteraction, Assembly-CSharp
+          m_MethodName: Interact
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &1280377760
 Transform:
   m_ObjectHideFlags: 0
@@ -22966,6 +22984,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1280377761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280377758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534681887e62fc542886e6f735dfb0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogInteraction
+  once: 0
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  dialogID: 1
 --- !u!1 &1282929913
 GameObject:
   m_ObjectHideFlags: 0
