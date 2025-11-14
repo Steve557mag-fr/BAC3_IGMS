@@ -31049,7 +31049,7 @@ MonoBehaviour:
   onInteract:
     m_PersistentCalls:
       m_Calls: []
-  dialogID: 0
+  dialogID: 5
 --- !u!43 &1907781729
 Mesh:
   m_ObjectHideFlags: 0
